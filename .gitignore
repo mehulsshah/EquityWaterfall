@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment
+.env*.local
+
+# Editor / OS
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# gstack tooling (browser daemon state)
+.gstack/
+
+# Local research artifacts (PDFs, spreadsheets users may drop in for reference)
+*.pdf
+*.xlsx
+*.xls
+*.docx
