@@ -5,8 +5,7 @@
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(/^/, "https://") ??
-  "https://equitywaterfall.vercel.app";
+  "https://equitywaterfall.foundero.io";
 
 export const SITE = {
   name: "Equity Waterfall",
