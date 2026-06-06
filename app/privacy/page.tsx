@@ -2,9 +2,21 @@ import type { Metadata } from "next";
 import { BulletList, LegalShell, Section } from "@/components/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Equity Waterfall",
+  title: "Privacy Policy",
   description:
-    "Equity Waterfall does not collect, store, or transmit any user data. Everything happens in your browser.",
+    "Equity Waterfall does not collect, store, or transmit any user data. No accounts, no analytics, no tracking. Everything happens in your browser.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy — Equity Waterfall",
+    description:
+      "No data collection, no tracking, no accounts. Everything stays in your browser.",
+    url: "/privacy",
+    type: "article",
+  },
+  twitter: {
+    title: "Privacy Policy — Equity Waterfall",
+    description: "No data collection, no tracking.",
+  },
 };
 
 export default function PrivacyPage() {

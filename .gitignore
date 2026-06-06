@@ -19,6 +19,7 @@ next-env.d.ts
 
 # gstack tooling (browser daemon state)
 .gstack/
+.preview.*
 
 # Local research artifacts (PDFs, spreadsheets users may drop in for reference)
 *.pdf

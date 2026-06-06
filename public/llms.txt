@@ -1,0 +1,34 @@
+# Equity Waterfall
+
+> A free, open-source web calculator that helps prospective employees at private-equity-backed companies model what their equity grant actually pays at exit — past the 409A quote — by simulating the LBO debt waterfall, sponsor preferred return, MIP carry, and performance-unlock tiers.
+
+Recruiters typically quote equity offers as "$X at the current 409A valuation." That figure is the IRS-mandated fair-market value of common stock today. It is not what you take home at exit. At exit, cash flows through a multi-step waterfall: senior debt repayment, transaction costs, sponsor preferred return, sponsor catch-up, and finally a carried-interest split. The management incentive plan (MIP) sits at the bottom of the stack and may be further gated by performance-unlock thresholds tied to sponsor MOIC.
+
+Equity Waterfall makes this stack legible. The user adjusts assumptions with live sliders — exit multiple, ARR growth, EBITDA margin, debt, sponsor basis, vesting, performance unlocks — and sees a side-by-side comparison: what the 409A says vs. the modeled base-case payout vs. the upside if the sponsor hits its benchmark. Inputs and outputs are encoded in the URL hash so scenarios can be bookmarked and shared.
+
+The app is entirely client-side. No accounts, no analytics, no tracking, no data collection.
+
+## How the calculation works
+
+The engine implements a simplified European/whole-of-fund waterfall in four sequential steps:
+
+1. **Return of Capital** — cash-investing holders receive their original investment pro-rata, capped at the available pool.
+2. **Preferred Return** — investors earn an 8% (configurable) annual compounded return on their original investment.
+3. **GP Catch-Up** — the sponsor receives the next dollars until its total profit share reaches 20% (the standard carry rate).
+4. **80/20 Carried Split** — 80% of remaining proceeds go pro-rata to all holders by ownership percentage; 20% goes to the sponsor as carry.
+
+A pre-Step 1 tier optionally handles sponsor PIK shareholder loans, repaid with accrued PIK interest before any common equity sees a dollar. A post-waterfall tier applies tiered MIP performance unlocks (e.g. 50% unlock at 2× sponsor MOIC, 100% at 3×), gating the management pool's payout on the sponsor's realized return.
+
+## Pages
+
+- [Calculator](/): the main waterfall modeler with live sliders, editable cap table, sensitivity heatmap, and CSV export.
+- [Privacy Policy](/privacy): the app collects, stores, and transmits no user data.
+- [Terms of Use](/terms): educational only, not financial, legal, or tax advice.
+
+## Source
+
+- [GitHub repository](https://github.com/mehulsshah/EquityWaterfall): Next.js 14, TypeScript, Tailwind, shadcn/ui. Pure-function calculation engine in `lib/waterfall.ts`.
+
+## Not financial advice
+
+This is an educational tool. Default values are illustrative — they are not estimates of any specific company. Specific deal terms (sponsor basis, MIP design, liquidation preferences, performance unlock thresholds, PIK structure) are private and typically not disclosed. Users must input their own best estimates and consult qualified financial, legal, and tax professionals before making any decision based on the modeled outputs.

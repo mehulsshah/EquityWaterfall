@@ -2,9 +2,21 @@ import type { Metadata } from "next";
 import { BulletList, LegalShell, Section } from "@/components/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Equity Waterfall",
+  title: "Terms of Use",
   description:
-    "Equity Waterfall is an educational tool. It is not financial, legal, tax, or investment advice.",
+    "Equity Waterfall is an educational tool. It is not financial, legal, tax, or investment advice. Verify every assumption with the people who have the actual deal documents.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Use — Equity Waterfall",
+    description:
+      "Educational tool only. Not financial, legal, or tax advice.",
+    url: "/terms",
+    type: "article",
+  },
+  twitter: {
+    title: "Terms of Use — Equity Waterfall",
+    description: "Educational tool only. Not financial advice.",
+  },
 };
 
 export default function TermsPage() {
